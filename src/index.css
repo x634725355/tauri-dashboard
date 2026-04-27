@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  body {
+    @apply m-0 font-sans antialiased;
+  }
+}
+
+@layer components {
+  .dashboard-card {
+    @apply rounded-2xl border bg-white p-4 shadow-lg shadow-black/5 transition-colors
+           dark:border-neutral-700 dark:bg-neutral-800 dark:shadow-black/35;
+  }
+
+  .dashboard-card h2 {
+    @apply mb-3 text-sm font-semibold tracking-wide text-neutral-600
+           dark:text-neutral-300;
+  }
+
+  .dashboard-card.wide {
+    @apply col-span-full;
+  }
+
+  .metric-row {
+    @apply grid grid-cols-[1fr_auto] items-baseline gap-x-2.5 gap-y-1.5 border-b border-neutral-100 py-1.5 text-sm
+           last:border-b-0 dark:border-neutral-700;
+  }
+
+  .metric-label {
+    @apply text-neutral-500 dark:text-neutral-400;
+  }
+
+  .metric-value {
+    @apply font-semibold tabular-nums text-neutral-800 dark:text-neutral-100;
+  }
+
+  .metric-note {
+    @apply col-span-full overflow-hidden text-ellipsis whitespace-nowrap text-xs text-neutral-400
+           dark:text-neutral-500;
+  }
+
+  .progress-bar-track {
+    @apply h-2.5 overflow-hidden rounded-full bg-neutral-200 dark:bg-neutral-700;
+  }
+
+  .progress-bar-fill {
+    @apply h-full rounded-full bg-gradient-to-r from-primary-400 to-accent-400;
+  }
+
+  .disk-table-header {
+    @apply grid grid-cols-[1.2fr_1.4fr_0.6fr_1.4fr] gap-2 border-b border-neutral-200 pb-2 text-sm font-semibold text-neutral-500
+           dark:border-neutral-700 dark:text-neutral-400;
+  }
+
+  .disk-table-row {
+    @apply grid grid-cols-[1.2fr_1.4fr_0.6fr_1.4fr] gap-2 border-b border-neutral-100 py-2 text-sm
+           last:border-b-0 dark:border-neutral-700;
+  }
+
+  .brightness-block {
+    @apply border-b border-neutral-100 pb-3 last:mb-0 last:border-b-0 last:pb-0
+           dark:border-neutral-700;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
